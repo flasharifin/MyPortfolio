@@ -8,6 +8,31 @@ import { SiGithub } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import { personal, stats } from "@/data";
 
+function Typewriter({ text, delay = 600 }: { text: string; delay?: number }) {
+  const [displayed, setDisplayed] = useState("");
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      let i = 0;
+      const interval = setInterval(() => {
+        i++;
+        setDisplayed(text.slice(0, i));
+        if (i >= text.length) { clearInterval(interval); setDone(true); }
+      }, 40);
+      return () => clearInterval(interval);
+    }, delay);
+    return () => clearTimeout(timeout);
+  }, [text, delay]);
+
+  return (
+    <>
+      {displayed}
+      {!done && <span className="inline-block w-0.5 h-5 bg-blue-400 ml-0.5 align-middle animate-pulse" />}
+    </>
+  );
+}
+
 function CountUp({ value, duration = 1500 }: { value: string; duration?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true });
@@ -90,9 +115,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl md:text-2xl font-medium bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4"
+          className="text-xl md:text-2xl font-medium bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4 min-h-[2rem]"
         >
-          {personal.title}
+          <Typewriter text={personal.title} delay={700} />
         </motion.p>
 
         <motion.p

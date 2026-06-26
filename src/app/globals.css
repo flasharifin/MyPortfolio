@@ -31,7 +31,7 @@ body::before {
 }
 
 /* All section content sits above the dot grid */
-main, section, header, nav, footer {
+main, section, header, footer {
   position: relative;
   z-index: 1;
 }

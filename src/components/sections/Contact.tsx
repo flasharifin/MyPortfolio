@@ -2,10 +2,52 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2, Copy, Check } from "lucide-react";
 import { personal } from "@/data";
 
 type Status = "idle" | "loading" | "success" | "error";
+
+function CopyableInfo({ icon: Icon, label, value, href }: {
+  icon: React.ElementType;
+  label: string;
+  value: string;
+  href: string | null;
+}) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(value);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="group flex items-center gap-4 p-5 rounded-xl bg-[#16161e] border border-white/5 hover:border-blue-500/20 transition-colors duration-200">
+      <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+        <Icon size={18} className="text-blue-400" />
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="text-xs text-slate-500 mb-0.5">{label}</p>
+        {href ? (
+          <a href={href} className="text-white text-sm hover:text-blue-400 transition-colors truncate block">
+            {value}
+          </a>
+        ) : (
+          <p className="text-white text-sm truncate">{value}</p>
+        )}
+      </div>
+      {navigator && (
+        <button
+          onClick={handleCopy}
+          title="Copy"
+          className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-slate-500 hover:text-blue-400"
+        >
+          {copied ? <Check size={15} className="text-emerald-400" /> : <Copy size={15} />}
+        </button>
+      )}
+    </div>
+  );
+}
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
@@ -74,25 +116,8 @@ export default function Contact() {
               { icon: Mail, label: "Email", value: personal.email, href: `mailto:${personal.email}` },
               { icon: Phone, label: "Phone", value: personal.phone, href: `tel:${personal.phone}` },
               { icon: MapPin, label: "Location", value: personal.location, href: null },
-            ].map(({ icon: Icon, label, value, href }) => (
-              <div
-                key={label}
-                className="flex items-center gap-4 p-5 rounded-xl bg-[#16161e] border border-white/5"
-              >
-                <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
-                  <Icon size={18} className="text-blue-400" />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 mb-0.5">{label}</p>
-                  {href ? (
-                    <a href={href} className="text-white text-sm hover:text-blue-400 transition-colors">
-                      {value}
-                    </a>
-                  ) : (
-                    <p className="text-white text-sm">{value}</p>
-                  )}
-                </div>
-              </div>
+            ].map((item) => (
+              <CopyableInfo key={item.label} {...item} />
             ))}
           </motion.div>
 
