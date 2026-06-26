@@ -28,11 +28,10 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
 
   return (
     <motion.div
-      layout
       initial={{ opacity: 0, scale: 0.97 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.97 }}
-      transition={{ duration: 0.25 }}
+      transition={{ duration: 0.2 }}
       className={`card-hover relative bg-[#16161e] border rounded-2xl p-6 flex flex-col ${
         isPersonal
           ? "border-amber-500/20 hover:border-amber-500/50 hover:shadow-[0_16px_40px_rgba(245,158,11,0.12)]"
@@ -180,13 +179,13 @@ export default function Projects() {
         </div>
 
         {/* Grid */}
-        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <AnimatePresence mode="popLayout">
             {filtered.map((p) => (
               <ProjectCard key={p.id} project={p} />
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
