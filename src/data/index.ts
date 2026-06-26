@@ -1,10 +1,10 @@
 export const personal = {
   name: "Mochamad Arifin",
   title: "Senior Mobile & Full-Stack Developer",
-  tagline: "9+ Years Building Fintech Solutions for Android & iOS",
+  tagline: "9+ Years Building Fintech Solutions for Web & Mobile Android & iOS",
   email: "flashcorparifin@gmail.com",
   phone: "083856601802",
-  location: "Surabaya, Indonesia",
+  location: "Sidoarjo, Indonesia",
   bio: "Experienced software developer specializing in mobile application development for Android and iOS platforms. With over 9 years at PT. Dwidasa Samsara Indonesia, I have delivered 14+ production applications across fintech, banking, healthcare, and security sectors — serving major Indonesian banks and enterprise clients.",
 };
 
@@ -12,7 +12,7 @@ export const stats = [
   { label: "Years Experience", value: "9+" },
   { label: "Projects Delivered", value: "15+" },
   { label: "Banking Clients", value: "10+" },
-  { label: "Platforms", value: "Android & iOS" },
+  { label: "Platforms", value: "Web & Mobile Android & iOS" },
 ];
 
 export const skills = [
@@ -60,7 +60,7 @@ export const projects: Project[] = [
       "Implemented merchant payments, QRIS, and Online Onboarding (OOB)",
       "Designed and built new APIs tailored to the bank's evolving needs",
     ],
-    tech: ["Android", "iOS", "Kotlin", "Swift", "Go", "PostgreSQL"],
+    tech: ["Android", "iOS", "Swift", "Spring Boot", "PostgreSQL", "Objective C"],
   },
   {
     id: 2,
@@ -73,7 +73,7 @@ export const projects: Project[] = [
       "New features: Online Onboarding, OVO, GoPay, QRIS, Virtual Accounts, Cardless ATM",
       "Published and maintained apps on Play Store and App Store",
     ],
-    tech: ["Android", "iOS", "Kotlin", "Swift"],
+    tech: ["Android", "iOS", "Java", "Objective C", "Flutter"],
   },
   {
     id: 3,
@@ -86,7 +86,7 @@ export const projects: Project[] = [
       "New products: Online Onboarding, OVO, GoPay, QRIS, Deposits & Virtual Accounts",
       "Full lifecycle: development, Play Store / App Store upload, maintenance",
     ],
-    tech: ["Android", "iOS", "Java", "Swift"],
+    tech: ["Android", "iOS", "Java", "Swift", "Objective C"],
   },
   {
     id: 4,
@@ -99,7 +99,7 @@ export const projects: Project[] = [
       "Ensured feature delivery matched mock-up design and specifications",
       "Coordinated with the BPD Kalsel team and internal team",
     ],
-    tech: ["Vue.js", "React"],
+    tech: ["Vue.js"],
   },
   {
     id: 5,
@@ -112,7 +112,7 @@ export const projects: Project[] = [
       "New products: Redesign, Self Registration, Biller Payments, QRIS, Deposits & Virtual Accounts",
       "Application maintenance and bug fixing via ticketing",
     ],
-    tech: ["Android", "iOS", "Kotlin", "Swift"],
+    tech: ["Android", "iOS", "Java", "Objective C"],
   },
   {
     id: 6,
@@ -125,7 +125,7 @@ export const projects: Project[] = [
       "Features: Self-registration, OVO & GoPay biller top-up, QRIS",
       "Published apps to Play Store and App Store",
     ],
-    tech: ["Android", "iOS", "Java", "Swift"],
+    tech: ["Android", "iOS", "Java", "Objective C"],
   },
   {
     id: 7,
@@ -150,7 +150,7 @@ export const projects: Project[] = [
       "Published to Play Store and App Store",
       "Application maintenance and bug fixing",
     ],
-    tech: ["Android", "iOS", "Java", "Swift"],
+    tech: ["Android", "iOS", "Java", "Swift", "Objective C"],
   },
   {
     id: 9,
@@ -163,7 +163,7 @@ export const projects: Project[] = [
       "Published to Play Store and App Store",
       "Application maintenance and bug fixing",
     ],
-    tech: ["Android", "iOS", "Java", "Obj-C"],
+    tech: ["Android", "iOS", "Java", "Objective C"],
   },
   {
     id: 10,
@@ -175,7 +175,7 @@ export const projects: Project[] = [
       "Developed Mobile Banking for Android and iOS",
       "Published to Play Store and App Store",
     ],
-    tech: ["Android", "iOS", "Java"],
+    tech: ["Android", "iOS", "Java", "Objective C"],
   },
   {
     id: 11,
@@ -188,7 +188,7 @@ export const projects: Project[] = [
       "Ensured delivered features and UI matched mock-ups and specifications",
       "Coordinated with Kiosque and DSI teams",
     ],
-    tech: ["Android", "iOS", "Kotlin", "Swift"],
+    tech: ["Android", "iOS", "Kotlin", "Swift", "Objectvice C"],
   },
   {
     id: 12,
@@ -213,7 +213,7 @@ export const projects: Project[] = [
       "Ensured feature delivery matched mock-up design",
       "Coordinated with Klinisia and internal teams",
     ],
-    tech: ["React", "Vue.js"],
+    tech: ["Kotlin", "Vue.js"],
   },
   {
     id: 15,
@@ -227,7 +227,7 @@ export const projects: Project[] = [
       "Digitalization of Surat Pengantar (introduction letters): residents can submit and get documents approved online without visiting the RT/RW office",
       "Financial transparency dashboard enabling residents to monitor neighborhood funds (kas RT/RW) in real-time",
     ],
-    tech: ["Flutter", "Dart", "Go", "React", "TypeScript", "Tailwind CSS"],
+    tech: ["Flutter", "Go", "React", "TypeScript", "Tailwind CSS"],
     repoUrl: "https://gitlab.com/flashcorparifin/kampungku",
   },
   {
