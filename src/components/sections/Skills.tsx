@@ -5,7 +5,7 @@ import {
   SiKotlin, SiSwift, SiDart, SiFlutter, SiAndroid,
   SiReact, SiTypescript, SiVuedotjs,
   SiGo, SiPostgresql, SiFirebase,
-  SiDocker,
+  SiDocker, SiXcode,
 } from "react-icons/si";
 import { FaJava, FaApple, FaBrain } from "react-icons/fa";
 import { skills } from "@/data";
@@ -19,6 +19,7 @@ const skillIcon: Record<string, IconType> = {
   "Flutter": SiFlutter,
   "Android": SiAndroid,
   "iOS": FaApple,
+  "Obj-C": SiXcode,
   "React": SiReact,
   "TypeScript": SiTypescript,
   "Vue.js": SiVuedotjs,

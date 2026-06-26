@@ -59,7 +59,7 @@ function CountUp({ value, duration = 1500 }: { value: string; duration?: number 
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col px-6 pt-20 overflow-hidden">
       {/* Background gradient blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="blob-1 absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl" />
@@ -67,7 +67,8 @@ export default function Hero() {
         <div className="blob-1 absolute top-3/4 left-2/3 w-64 h-64 bg-violet-600/8 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-4xl mx-auto text-center">
+      <div className="relative flex-1 flex items-center justify-center">
+      <div className="max-w-4xl mx-auto text-center w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -158,7 +159,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.45 }}
-          className="flex items-center justify-center gap-3 mb-16"
+          className="flex items-center justify-center gap-3 mb-10"
         >
           <a
             href={personal.linkedin}
@@ -200,13 +201,16 @@ export default function Hero() {
           ))}
         </motion.div>
       </div>
+      </div>
 
-      <a
-        href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-600 hover:text-slate-400 transition-colors animate-bounce"
-      >
-        <ChevronDown size={24} />
-      </a>
+      <div className="relative flex justify-center pb-8 pt-4">
+        <a
+          href="#about"
+          className="text-slate-600 hover:text-slate-400 transition-colors animate-bounce"
+        >
+          <ChevronDown size={24} />
+        </a>
+      </div>
     </section>
   );
 }
