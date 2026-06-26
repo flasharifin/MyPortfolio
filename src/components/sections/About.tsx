@@ -6,7 +6,7 @@ import { personal } from "@/data";
 
 const highlights = [
   { icon: Briefcase, label: "Role", value: "Software Developer" },
-  { icon: MapPin, label: "Location", value: "Surabaya, Indonesia" },
+  { icon: MapPin, label: "Location", value: "Sidoarjo, Indonesia" },
   { icon: Code2, label: "Focus", value: "Mobile & Full-Stack" },
 ];
 

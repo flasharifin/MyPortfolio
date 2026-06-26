@@ -14,7 +14,7 @@ export const stats = [
   { label: "Years Experience", value: "10+" },
   { label: "Projects Delivered", value: "15+" },
   { label: "Banking Clients", value: "10+" },
-  { label: "Platforms", value: "3" },
+  { label: "Platforms", value: "3", sub: "Android · iOS · Web" },
 ];
 
 export const skills = [

@@ -197,6 +197,9 @@ export default function Hero() {
                 <CountUp value={s.value} />
               </div>
               <div className="text-xs text-slate-500">{s.label}</div>
+              {"sub" in s && s.sub && (
+                <div className="text-[10px] text-slate-600 mt-0.5">{s.sub}</div>
+              )}
             </div>
           ))}
         </motion.div>
