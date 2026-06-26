@@ -1,20 +1,20 @@
 export const personal = {
   name: "Mochamad Arifin",
   title: "Senior Mobile & Full-Stack Developer",
-  tagline: "9+ Years Building Fintech Solutions for Web & Mobile Android & iOS",
+  tagline: "10+ Years Building Fintech Solutions for Web & Mobile Android & iOS",
   email: "flashcorparifin@gmail.com",
   phone: "083856601802",
   location: "Sidoarjo, Indonesia",
-  bio: "Experienced software developer specializing in mobile application development for Android and iOS platforms. With over 9 years at PT. Dwidasa Samsara Indonesia, I have delivered 14+ production applications across fintech, banking, healthcare, and security sectors — serving major Indonesian banks and enterprise clients.",
+  bio: "Experienced software developer specializing in mobile application development for Android and iOS platforms. With over 10 years at PT. Dwidasa Samsara Indonesia, I have delivered 15+ production applications across fintech, banking, healthcare, and security sectors — serving major Indonesian banks and enterprise clients.",
   linkedin: "https://www.linkedin.com/in/mochamad-arifin",
   github: "https://github.com/flasharifin",
 };
 
 export const stats = [
-  { label: "Years Experience", value: "9+" },
+  { label: "Years Experience", value: "10+" },
   { label: "Projects Delivered", value: "15+" },
   { label: "Banking Clients", value: "10+" },
-  { label: "Platforms", value: "Web & Mobile Android & iOS" },
+  { label: "Platforms", value: "3" },
 ];
 
 export const skills = [
@@ -190,7 +190,7 @@ export const projects: Project[] = [
       "Ensured delivered features and UI matched mock-ups and specifications",
       "Coordinated with Kiosque and DSI teams",
     ],
-    tech: ["Android", "iOS", "Kotlin", "Swift", "Objectvice C"],
+    tech: ["Android", "iOS", "Kotlin", "Swift", "Objective C"],
   },
   {
     id: 12,
