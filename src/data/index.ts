@@ -84,7 +84,7 @@ export const projects: Project[] = [
     description: [
       "Developed mobile banking for Android and iOS",
       "New products: Online Onboarding, OVO, GoPay, QRIS, Deposits & Virtual Accounts",
-      "Full lifecycle: development, Play Store / App Store upload, maintenance",
+      "Full lifecycle: development, published to Play Store & App Store, and ongoing maintenance",
     ],
     tech: ["Android", "iOS", "Java", "Swift", "Objective C"],
   },
@@ -258,6 +258,7 @@ export const experience = {
     "Coding, testing, debugging, and monitoring document changes",
     "Fixing mobile application bugs via ticketing system",
     "Collaborating with teams to continuously innovate application functions and design",
+    "Published and released mobile applications to Google Play Store and Apple App Store"
   ],
 };
 
