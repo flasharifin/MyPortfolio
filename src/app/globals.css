@@ -19,6 +19,23 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+/* Subtle dot grid pattern overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* All section content sits above the dot grid */
+main, section, header, nav, footer {
+  position: relative;
+  z-index: 1;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -31,4 +48,35 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #3b3b5c;
+}
+
+/* Floating blob animations */
+@keyframes blob-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -20px) scale(1.05); }
+  66%       { transform: translate(-20px, 15px) scale(0.97); }
+}
+
+@keyframes blob-float-alt {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-25px, 20px) scale(1.04); }
+  66%       { transform: translate(20px, -15px) scale(0.96); }
+}
+
+.blob-1 {
+  animation: blob-float 12s ease-in-out infinite;
+}
+
+.blob-2 {
+  animation: blob-float-alt 15s ease-in-out infinite;
+}
+
+/* Card glow hover */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(59, 130, 246, 0.12);
 }

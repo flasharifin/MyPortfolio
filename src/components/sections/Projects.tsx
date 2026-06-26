@@ -33,10 +33,10 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ duration: 0.25 }}
-      className={`relative bg-[#16161e] border rounded-2xl p-6 flex flex-col transition-colors duration-200 ${
+      className={`card-hover relative bg-[#16161e] border rounded-2xl p-6 flex flex-col ${
         isPersonal
-          ? "border-amber-500/20 hover:border-amber-500/40"
-          : "border-white/5 hover:border-white/10"
+          ? "border-amber-500/20 hover:border-amber-500/50 hover:shadow-[0_16px_40px_rgba(245,158,11,0.12)]"
+          : "border-white/5 hover:border-blue-500/25 hover:shadow-[0_16px_40px_rgba(59,130,246,0.1)]"
       }`}
     >
       {/* Active badge for personal projects */}

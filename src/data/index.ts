@@ -6,6 +6,8 @@ export const personal = {
   phone: "083856601802",
   location: "Sidoarjo, Indonesia",
   bio: "Experienced software developer specializing in mobile application development for Android and iOS platforms. With over 9 years at PT. Dwidasa Samsara Indonesia, I have delivered 14+ production applications across fintech, banking, healthcare, and security sectors — serving major Indonesian banks and enterprise clients.",
+  linkedin: "https://www.linkedin.com/in/mochamad-arifin",
+  github: "https://github.com/flasharifin",
 };
 
 export const stats = [
