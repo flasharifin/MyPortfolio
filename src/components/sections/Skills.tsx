@@ -2,41 +2,31 @@
 
 import { motion } from "framer-motion";
 import {
-  SiKotlin, SiSwift, SiDart, SiFlutter, SiAndroid,
+  SiKotlin, SiSwift, SiDart, SiFlutter,
   SiReact, SiTypescript, SiVuedotjs,
   SiGo, SiPostgresql, SiFirebase,
   SiDocker, SiXcode,
 } from "react-icons/si";
-import { FaJava, FaApple, FaBrain } from "react-icons/fa";
+import { FaJava, FaBrain } from "react-icons/fa";
 import { skills } from "@/data";
 import type { IconType } from "react-icons";
 
 const skillIcon: Record<string, IconType> = {
-  "Kotlin": SiKotlin,
-  "Java": FaJava,
-  "Swift": SiSwift,
-  "Dart": SiDart,
-  "Flutter": SiFlutter,
-  "Android": SiAndroid,
-  "iOS": FaApple,
-  "Obj-C": SiXcode,
-  "React": SiReact,
+  "Kotlin":     SiKotlin,
+  "Java":       FaJava,
+  "Swift":      SiSwift,
+  "Dart":       SiDart,
+  "Flutter":    SiFlutter,
+  "Obj-C":      SiXcode,
+  "React":      SiReact,
   "TypeScript": SiTypescript,
-  "Vue.js": SiVuedotjs,
-  "Go": SiGo,
+  "Vue.js":     SiVuedotjs,
+  "Go":         SiGo,
   "PostgreSQL": SiPostgresql,
-  "Firebase": SiFirebase,
-  "Docker": SiDocker,
-  "Claude AI": FaBrain,
-  "Gemini AI": FaBrain,
-};
-
-const categoryLabel: Record<string, string> = {
-  mobile: "Mobile",
-  frontend: "Frontend",
-  backend: "Backend / Database",
-  devops: "DevOps",
-  ai: "AI",
+  "Firebase":   SiFirebase,
+  "Docker":     SiDocker,
+  "Claude AI":  FaBrain,
+  "Gemini AI":  FaBrain,
 };
 
 const categoryColor: Record<string, { badge: string; icon: string }> = {
@@ -47,7 +37,26 @@ const categoryColor: Record<string, { badge: string; icon: string }> = {
   ai:       { badge: "from-pink-500/15 to-pink-600/5 border-pink-500/20 text-pink-300 hover:border-pink-400/50 hover:shadow-[0_0_16px_rgba(236,72,153,0.15)]",       icon: "text-pink-400" },
 };
 
-const categories = ["mobile", "frontend", "backend", "devops", "ai"];
+const levels = [
+  {
+    key: "core" as const,
+    label: "Core Skills",
+    desc: "Expert · 7+ years daily use",
+    dot: "bg-blue-400",
+  },
+  {
+    key: "proficient" as const,
+    label: "Proficient",
+    desc: "Delivered production projects",
+    dot: "bg-emerald-400",
+  },
+  {
+    key: "familiar" as const,
+    label: "Familiar",
+    desc: "Used in practice, still growing",
+    dot: "bg-slate-500",
+  },
+];
 
 export default function Skills() {
   return (
@@ -66,32 +75,38 @@ export default function Skills() {
           <h2 className="text-3xl md:text-4xl font-bold text-white">Skills & Technologies</h2>
         </motion.div>
 
-        <div className="space-y-8">
-          {categories.map((cat, ci) => {
-            const group = skills.filter((s) => s.category === cat);
+        <div className="space-y-10">
+          {levels.map((level, li) => {
+            const group = skills.filter((s) => s.level === level.key);
             if (!group.length) return null;
-            const colors = categoryColor[cat];
             return (
               <motion.div
-                key={cat}
+                key={level.key}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: ci * 0.08 }}
+                transition={{ duration: 0.4, delay: li * 0.1 }}
               >
-                <p className="text-xs font-medium text-slate-500 uppercase tracking-widest mb-3">
-                  {categoryLabel[cat]}
-                </p>
+                {/* Section divider */}
+                <div className="flex items-center gap-3 mb-5">
+                  <span className={`w-2 h-2 rounded-full flex-shrink-0 ${level.dot}`} />
+                  <span className="text-sm font-semibold text-white">{level.label}</span>
+                  <div className="flex-1 h-px bg-white/8" />
+                  <span className="text-xs text-slate-600 whitespace-nowrap">{level.desc}</span>
+                </div>
+
+                {/* Badges */}
                 <div className="flex flex-wrap gap-3">
                   {group.map((skill, si) => {
                     const Icon = skillIcon[skill.name];
+                    const colors = categoryColor[skill.category];
                     return (
                       <motion.div
                         key={skill.name}
                         initial={{ opacity: 0, scale: 0.85 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: ci * 0.05 + si * 0.04 }}
+                        transition={{ duration: 0.3, delay: li * 0.05 + si * 0.04 }}
                         className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border bg-gradient-to-br text-sm font-medium transition-all duration-200 cursor-default ${colors.badge}`}
                       >
                         {Icon && <Icon size={15} className={`flex-shrink-0 ${colors.icon}`} />}

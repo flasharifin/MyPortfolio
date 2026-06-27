@@ -5,7 +5,7 @@ export const personal = {
   email: "flashcorparifin@gmail.com",
   phone: "083856601802",
   location: "Sidoarjo, Indonesia",
-  bio: "Experienced software developer specializing in mobile application development for Android and iOS platforms. With over 10 years at PT. Dwidasa Samsara Indonesia, I have delivered 15+ production applications across fintech, banking, healthcare, and security sectors — serving major Indonesian banks and enterprise clients.",
+  bio: "Experienced software developer specializing in mobile application development for Android and iOS platforms. With over 10 years at PT. Dwidasa Samsara Indonesia / PT. Primavisi Globalindo, I have delivered 15+ production applications across fintech, banking, healthcare, and security sectors — serving major Indonesian banks and enterprise clients.",
   linkedin: "https://www.linkedin.com/in/mochamad-arifin",
   github: "https://github.com/flasharifin",
 };
@@ -18,24 +18,22 @@ export const stats = [
 ];
 
 export const skills = [
-  { name: "Kotlin", category: "mobile" },
-  { name: "Java", category: "mobile" },
-  { name: "Swift", category: "mobile" },
-  { name: "Obj-C", category: "mobile" },
-  { name: "Dart", category: "mobile" },
-  { name: "Android", category: "mobile" },
-  { name: "iOS", category: "mobile" },
-  { name: "Flutter", category: "mobile" },
-  { name: "React", category: "frontend" },
-  { name: "TypeScript", category: "frontend" },
-  { name: "Vue.js", category: "frontend" },
-  { name: "Go", category: "backend" },
-  { name: "PostgreSQL", category: "backend" },
-  { name: "Firebase", category: "backend" },
-  { name: "Docker", category: "devops" },
-  { name: "Claude AI", category: "ai" },
-  { name: "Gemini AI", category: "ai" },
-];
+  { name: "Kotlin",     category: "mobile",   level: "core" },
+  { name: "Java",       category: "mobile",   level: "core" },
+  { name: "Swift",      category: "mobile",   level: "core" },
+  { name: "Obj-C",      category: "mobile",   level: "core" },
+  { name: "Dart",       category: "mobile",   level: "core" },
+  { name: "Flutter",    category: "mobile",   level: "core" },
+  { name: "React",      category: "frontend", level: "proficient" },
+  { name: "TypeScript", category: "frontend", level: "proficient" },
+  { name: "Vue.js",     category: "frontend", level: "proficient" },
+  { name: "Go",         category: "backend",  level: "proficient" },
+  { name: "PostgreSQL", category: "backend",  level: "proficient" },
+  { name: "Firebase",   category: "backend",  level: "proficient" },
+  { name: "Docker",     category: "devops",   level: "familiar" },
+  { name: "Claude AI",  category: "ai",       level: "familiar" },
+  { name: "Gemini AI",  category: "ai",       level: "familiar" },
+] as const;
 
 export type ProjectCategory = "all" | "banking" | "fintech" | "health" | "security" | "personal";
 

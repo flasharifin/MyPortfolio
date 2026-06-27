@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import MotionProvider from "@/components/ui/MotionProvider";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -45,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-[#0a0a0f] text-slate-200 antialiased`}>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

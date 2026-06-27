@@ -80,3 +80,18 @@ main, section, header, footer {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(59, 130, 246, 0.12);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .card-hover:hover {
+    transform: none;
+  }
+}
